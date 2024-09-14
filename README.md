@@ -2,7 +2,7 @@
 
 # City Safe
 - Display user location area how safe is that area
-    - # of Crime cases in past year/month/week
+    - number of Crime cases in past year/month/week
     - Types of Crime cases
     - Calculated crime rate (need an algorithm)
 ---
