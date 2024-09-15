@@ -31,21 +31,32 @@ The project is organized with the following key components:
     - `layout.tsx`: Root layout component
     - `page.tsx`: Main page component
     - `not-found.tsx`: 404 page component
+    - `/api`: API routes for fetching crime data
+      - `/total-crimes`
+      - `/most-common-crime`
+      - `/safety-score`
+    - `/total-crimes`: Page for total crimes statistics
+    - `/most-common-crime`: Page for most common crime statistics
+    - `/safety-score`: Page for safety score statistics
   - `/components`
-    - `CrimeTrackerApp.tsx`: Main application component
-    - `AddressInput.tsx`: Component for address input
-    - `TimeRangeSelector.tsx`: Component for time range selection
-    - `CrimeMap.tsx`: Placeholder component for map display
-    - `CrimeStatistics.tsx`: Component for displaying crime statistics
-    - `/ui`
-      - `button.tsx`: Reusable Button component
-      - `card.tsx`: Card component for information display
-      - `input.tsx`: Input component
-      - `select.tsx`: Select component for dropdowns
+    - `/layout`
+      - `CrimeTrackerApp.tsx`: Main application component
+    - `/inputs`
+      - `AddressInput.tsx`: Component for address input
+      - `TimeRangeSelector.tsx`: Component for time range selection
+    - `/crime`
+      - `CrimeMap.tsx`: Placeholder component for map display
+      - `CrimeStatistics.tsx`: Component for displaying crime statistics
+    - `/panels`
+      - `TotalCrimesPanel.tsx`: Component for displaying total crimes
+      - `MostCommonCrimePanel.tsx`: Component for displaying most common crime
+      - `SafetyScorePanel.tsx`: Component for displaying safety score
+    - `/ui`: Reusable UI components
   - `/lib`
     - `utils.ts`: Utility functions
   - `/styles`
     - `globals.css`: Global styles
+    - `Home.module.css`: Styles for the home page
 - `next.config.js`: Next.js configuration
 - `package.json`: Project dependencies and scripts
 - `tsconfig.json`: TypeScript configuration

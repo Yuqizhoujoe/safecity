@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import AddressInput from "./AddressInput";
-import TimeRangeSelector from "./TimeRangeSelector";
-import CrimeMap from "./CrimeMap";
-import CrimeStatistics from "./CrimeStatistics";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import AddressInput from "@/components/inputs/AddressInput";
+import TimeRangeSelector from "@/components/inputs/TimeRangeSelector";
+import CrimeMap from "@/components/crime/CrimeMap";
+import TotalCrimesPanel from "@/components/panels/TotalCrimesPanel";
+import MostCommonCrimePanel from "@/components/panels/MostCommonCrimePanel";
+import SafetyScorePanel from "@/components/panels/SafetyScorePanel";
 
 const CrimeTrackerApp = () => {
   const [address, setAddress] = useState("");
@@ -25,7 +27,11 @@ const CrimeTrackerApp = () => {
               setTimeRange={setTimeRange}
             />
             <CrimeMap />
-            <CrimeStatistics timeRange={timeRange} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <TotalCrimesPanel />
+              <MostCommonCrimePanel />
+              <SafetyScorePanel />
+            </div>
           </div>
         </CardContent>
       </Card>
