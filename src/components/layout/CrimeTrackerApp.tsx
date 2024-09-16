@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AddressInput from "@/components/inputs/AddressInput";
@@ -12,22 +14,22 @@ const CrimeTrackerApp = () => {
   const [timeRange, setTimeRange] = useState("week");
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <Card className="max-w-4xl mx-auto">
+    <div className="crime-tracker-app min-h-screen bg-gray-100 p-8" data-testid="crime-tracker-app">
+      <Card className="crime-tracker-card max-w-4xl mx-auto bg-white shadow-lg rounded-lg" data-testid="crime-tracker-card">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">
+          <CardTitle className="crime-tracker-title text-2xl font-bold text-center" data-testid="crime-tracker-title">
             Area Crime Tracker
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
+        <CardContent className="crime-tracker-content" data-testid="crime-tracker-content">
+          <div className="crime-tracker-inputs space-y-6">
             <AddressInput address={address} setAddress={setAddress} />
             <TimeRangeSelector
               timeRange={timeRange}
               setTimeRange={setTimeRange}
             />
             <CrimeMap />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="crime-tracker-panels grid grid-cols-1 md:grid-cols-3 gap-4" data-testid="crime-tracker-panels">
               <TotalCrimesPanel />
               <MostCommonCrimePanel />
               <SafetyScorePanel />
