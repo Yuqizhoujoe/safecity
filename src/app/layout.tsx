@@ -1,9 +1,14 @@
 import React from "react";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
-export const metadata = {
+import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
   title: "Crime Tracker App",
-  description: "Track and visualize crime data in your area",
+  description: "Track crime statistics in your area",
 };
 
 export default function RootLayout({
@@ -13,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

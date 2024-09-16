@@ -10,16 +10,28 @@ interface AddressInputProps {
 
 const AddressInput: React.FC<AddressInputProps> = ({ address, setAddress }) => {
   return (
-    <div className="flex space-x-4">
+    <div
+      className="address-input-container flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+      data-testid="address-input-container"
+    >
       <Input
         type="text"
         placeholder="Enter your address"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
-        className="flex-grow"
+        className="address-input flex-grow"
+        data-testid="address-input"
       />
-      <Button variant="outline">
-        <MapPin className="mr-2 h-4 w-4" /> Use Current Location
+      <Button
+        variant="outline"
+        className="current-location-btn sm:w-auto"
+        data-testid="current-location-btn"
+      >
+        <MapPin
+          className="current-location-icon mr-2 h-8 w-8"
+          data-testid="current-location-icon"
+        />{" "}
+        Use Current Location
       </Button>
     </div>
   );
